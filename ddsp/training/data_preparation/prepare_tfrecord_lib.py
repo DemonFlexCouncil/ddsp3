@@ -62,7 +62,7 @@ def _load_audio(audio_path, sample_rate):
   return {'audio': audio}
 
 
-def add_loudness(ex, sample_rate, frame_rate, n_fft=2048):
+def add_loudness(ex, sample_rate, frame_rate, n_fft=6144):
   """Add loudness in dB."""
   beam.metrics.Metrics.counter('prepare-tfrecord', 'compute-loudness').inc()
   audio = ex['audio']
