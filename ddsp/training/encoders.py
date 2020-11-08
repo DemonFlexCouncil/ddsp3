@@ -119,7 +119,7 @@ class MfccTimeDistributedRnnEncoder(Encoder):
     mfccs = spectral_ops.compute_mfcc(
         conditioning['audio'],
         lo_hz=20.0,
-        hi_hz=8000.0,
+        hi_hz=24000.0,
         fft_size=self.fft_size,
         mel_bins=128,
         mfcc_bins=30,
