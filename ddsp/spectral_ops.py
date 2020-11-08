@@ -85,7 +85,7 @@ def compute_mel(audio,
   mag = compute_mag(audio, fft_size, overlap, pad_end)
   num_spectrogram_bins = int(mag.shape[-1])
   linear_to_mel_matrix = tf.signal.linear_to_mel_weight_matrix(
-      bins, num_spectrogram_bins, 16000, lo_hz, hi_hz)
+      bins, num_spectrogram_bins, 48000, lo_hz, hi_hz)
   mel = tf.tensordot(mag, linear_to_mel_matrix, 1)
   mel.set_shape(mag.shape[:-1].concatenate(linear_to_mel_matrix.shape[-1:]))
   return mel
