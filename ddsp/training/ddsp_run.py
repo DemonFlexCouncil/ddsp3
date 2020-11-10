@@ -138,7 +138,7 @@ def parse_gin(restore_dir):
     use_tpu = bool(FLAGS.tpu)
     opt_default = 'base.gin' if not use_tpu else 'base_tpu.gin'
     gin.parse_config_file(os.path.join('optimization', opt_default))
-    eval_default = 'eval/basic.gin'
+    eval_default = 'optimization/basic.gin'
     gin.parse_config_file(eval_default)
 
     # Load operative_config if it exists (model has already trained).
